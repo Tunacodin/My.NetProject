@@ -12,13 +12,17 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-        
-            ProductManager productManager =new ProductManager( new InMemoryProductDal());
+
+            InMemoryProductDal _inMemoryProductDal = new InMemoryProductDal();
+
+            ProductManager productManager =new ProductManager(_inMemoryProductDal);
+
+            Console.WriteLine(productManager);
 
             foreach(var product in productManager.GetAll())
             {
 
-                Console.WriteLine("Ürün Adı: ", product.ProductName);
+                Console.WriteLine( product.ProductName);
 
 
 
